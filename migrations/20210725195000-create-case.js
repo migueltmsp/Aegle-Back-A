@@ -8,10 +8,37 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      citizenId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Citizens',
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
+      },
       doctorId: {
         type: Sequelize.INTEGER,
         references: {
           model: 'Doctors',
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
+      },
+      hospitalId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Hospitals',
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
+      },
+      AssistantId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Assistants',
           key: 'id'
         },
         onUpdate: 'CASCADE',
