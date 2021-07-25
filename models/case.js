@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'hospitalId'
       });
     }
-    }
+    
   };
   Case.init({
     estado: DataTypes.STRING
