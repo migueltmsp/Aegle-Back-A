@@ -12,6 +12,12 @@ class Retrieve{
             where: {doctorId: 3}
         });
     }
+    async testId(id){
+        return Case.findAll({
+            where: {doctorId: id}
+        });
+    }
+
 
 
 }

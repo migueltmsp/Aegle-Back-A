@@ -1,9 +1,12 @@
 const express = require('express');
 const app = express();
-const port = 3005;
+const port = 80;
 const router = require('./router');
 const db = require('./db.js');
 const cors = require('cors');
+const bodyParser = require('body-parser');
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 // Middleware
 app.use(cors());
