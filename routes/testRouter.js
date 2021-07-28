@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const testController = require("../controllers/testController.js");
-const bodyParser = require('body-parser');
 
 
 
@@ -30,7 +29,7 @@ router.post('/id', async (req, res)=> {
     try {
         let id = req.body.id;
 
-        console.log("Data card?",req.body.id)
+        console.log("Id is",req.body.id)
         res.json(await testController.testId(id));
        
     

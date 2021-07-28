@@ -14,6 +14,18 @@ module.exports = {
       numeroColegiado: {
         type: Sequelize.INTEGER
       },
+      email: {
+        type: Sequelize.STRING
+      },
+      password: {
+        type: Sequelize.STRING
+      },
+      codigoEmail: {
+        type: Sequelize.STRING
+      },
+      productoEscalar: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

@@ -15,7 +15,11 @@ module.exports = (sequelize, DataTypes) => {
   };
   Doctor.init({
     nombre: DataTypes.STRING,
-    numeroColegiado: DataTypes.INTEGER
+    numeroColegiado: DataTypes.INTEGER,
+    email: DataTypes.STRING,
+    password: DataTypes.ARRAY,
+    codigoEmail: DataTypes.ARRAY,
+    productoEscalar: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Doctor',
