@@ -15,9 +15,9 @@ router.get('/', async (req, res) => {
    }
 });
 
-router.get('/n3', async (req, res) => {
+router.get('/n1', async (req, res) => {
     try {
-        res.json(await testController.testCase3());
+        res.json(await testController.testCase1());
 
    }catch (err) {
        return res.status(500).json({

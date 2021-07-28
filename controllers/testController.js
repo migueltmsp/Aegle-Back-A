@@ -1,5 +1,5 @@
 const router = require("express").Router()
-const { Case } = require('../models');
+const { Doctor } = require('../models');
 
 class Retrieve{
 
@@ -7,9 +7,9 @@ class Retrieve{
         return Case.findAll();
     }
 
-    async testCase3(){
-        return Case.findAll({
-            where: {doctorId: 3}
+    async testCase1(){
+        return Doctor.findAll({
+            where: {id: 1}
         });
     }
     async testId(id){
