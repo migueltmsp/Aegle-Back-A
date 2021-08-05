@@ -7,10 +7,27 @@ class DoctorData {
         return Doctor.findAll();
     }
 
-    async loginTest(email){
+    async loginTest(email, password, codigoEmail){
         return Doctor.findAll({
-            where: {email: email}
-        });
+            where: {
+                email: email,
+                password: password
+            }
+        }
+        );
+    }
+
+    async passCode(email, password, codigoEmail){
+        return Doctor.findAll({
+            where: {
+                email: email,
+                password: password,
+                codigoEmail: codigoEmail
+            }
+        }
+        
+        );
+        
     }
 
 

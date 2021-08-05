@@ -26,6 +26,15 @@ module.exports = {
       productoEscalar: {
         type: Sequelize.INTEGER
       },
+      secretUser: {
+        type: Sequelize.STRING
+      },
+      numberBase: {
+        type: Sequelize.INTEGER
+      },
+      superToken: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

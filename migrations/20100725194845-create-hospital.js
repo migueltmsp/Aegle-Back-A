@@ -11,7 +11,28 @@ module.exports = {
       nombre: {
         type: Sequelize.STRING
       },
-      ubicacion: {
+      numeroEmpleado: {
+        type: Sequelize.INTEGER
+      },
+      email: {
+        type: Sequelize.STRING
+      },
+      password: {
+        type: Sequelize.STRING
+      },
+      codigoEmail: {
+        type: Sequelize.STRING
+      },
+      productoEscalar: {
+        type: Sequelize.INTEGER
+      },
+      secretUser: {
+        type: Sequelize.STRING
+      },
+      numberBase: {
+        type: Sequelize.INTEGER
+      },
+      superToken: {
         type: Sequelize.STRING
       },
       createdAt: {

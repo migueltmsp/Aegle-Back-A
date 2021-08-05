@@ -14,6 +14,27 @@ module.exports = {
       numeroOperador: {
         type: Sequelize.INTEGER
       },
+      email: {
+        type: Sequelize.STRING
+      },
+      password: {
+        type: Sequelize.STRING
+      },
+      codigoEmail: {
+        type: Sequelize.STRING
+      },
+      productoEscalar: {
+        type: Sequelize.INTEGER
+      },
+      secretUser: {
+        type: Sequelize.STRING
+      },
+      numberBase: {
+        type: Sequelize.INTEGER
+      },
+      superToken: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

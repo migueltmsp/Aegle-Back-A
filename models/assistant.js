@@ -1,6 +1,6 @@
 'use strict';
 const {
-  Model
+  Model, STRING
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Assistant extends Model {
@@ -15,7 +15,14 @@ module.exports = (sequelize, DataTypes) => {
   };
   Assistant.init({
     nombre: DataTypes.STRING,
-    numeroOperador: DataTypes.INTEGER
+    numeroOperador: DataTypes.INTEGER,
+    email: DataTypes.STRING,
+    password: DataTypes.STRING,
+    codigoEmail: DataTypes.STRING,
+    productoEscalar: DataTypes.INTEGER,
+    secretUser: DataTypes.STRING,
+    numberBase: DataTypes.INTEGER,
+    superToken: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Assistant',

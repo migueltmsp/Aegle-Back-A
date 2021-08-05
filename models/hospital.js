@@ -15,7 +15,14 @@ module.exports = (sequelize, DataTypes) => {
   };
   Hospital.init({
     nombre: DataTypes.STRING,
-    ubicacion: DataTypes.STRING
+    numeroEmpleado: DataTypes.INTEGER,
+    email: DataTypes.STRING,
+    password: DataTypes.STRING,
+    codigoEmail: DataTypes.STRING,
+    productoEscalar: DataTypes.INTEGER,
+    secretUser: DataTypes.STRING,
+    numberBase: DataTypes.INTEGER,
+    superToken: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Hospital',
