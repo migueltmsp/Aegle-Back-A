@@ -30,7 +30,7 @@ router.post('/sendPassCode', async (req, res)=> {
         console.log("Datavalues es",answer[0].dataValues)
 
 
-        let tokenFake = (answer[0].password).concat(answer[0].codigoEmail)
+        let tokenFake = (answer[0].secretUser)
         res.json(tokenFake)
     } catch (err) {
         return res.status(500).json({
