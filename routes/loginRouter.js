@@ -27,11 +27,10 @@ router.post('/sendPassCode', async (req, res)=> {
        
 
         let answer = (await loginController.passCode(email, password, codigoEmail))
-        console.log("Datavalues es",answer[0].dataValues)
 
 
-        let tokenFake = (answer[0].secretUser)
-        res.json(tokenFake)
+        
+        res.json(answer[0]);
     } catch (err) {
         return res.status(500).json({
             mensaje: err.message
