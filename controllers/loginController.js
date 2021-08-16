@@ -17,12 +17,23 @@ class DoctorData {
         );
     }
 
-    async passCode(email, password, codigoEmail){
+    async passCode(email,productoEscalar){
         return Doctor.findAll({
             where: {
                 email: email,
-                password: password,
-                codigoEmail: codigoEmail
+                productoEscalar: productoEscalar
+            }
+        }
+        
+        );
+        
+    }
+
+    async completeLogin(secretUser, superToken){
+        return Doctor.findAll({
+            where: {
+                secretUser: secretUser,
+                superToken: superToken
             }
         }
         

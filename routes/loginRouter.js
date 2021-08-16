@@ -22,15 +22,28 @@ router.post('/searchEmail', async (req, res)=> {
 router.post('/sendPassCode', async (req, res)=> {             
     try {
         let email = req.body.email;
-        let password = req.body.password;
-        let codigoEmail = req.body.codigoEmail;
+        let productoEscalar = req.body.productoEscalar;
        
+        let answer = (await loginController.passCode(email,productoEscalar))
 
-        let answer = (await loginController.passCode(email, password, codigoEmail))
+        res.status(200).json(answer[0].secretUser);
+    } catch (err) {
+        return res.status(500).json({
+            mensaje: err.message
+        });
+    }
+});
+
+router.post('/completeLogin', async (req, res)=> {             
+    try {
+        let secretUser = req.body.secretUser;
+        let superToken = req.body.superToken;
+       
+        let answer = (await loginController.completeLogin(secretUser, superToken))
 
 
         
-        res.json(answer[0]);
+        res.status(200).json(answer[0]);
     } catch (err) {
         return res.status(500).json({
             mensaje: err.message
