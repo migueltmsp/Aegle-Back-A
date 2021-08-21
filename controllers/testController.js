@@ -22,7 +22,9 @@ class Retrieve{
         });
     }
 
-    async patchCase(id){
+    
+
+    async patchCase(id, estado){
         
         return await Case.findOne({
             where: {id: id}
