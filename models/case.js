@@ -26,7 +26,11 @@ module.exports = (sequelize, DataTypes) => {
     
   };
   Case.init({
-    estado: DataTypes.STRING
+    datosActuacion: DataTypes.STRING,
+    datosPersonales: DataTypes.STRING,
+    valoracion: DataTypes.STRING,
+    diagTrat: DataTypes.STRING,
+    manejoResolucion: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Case',

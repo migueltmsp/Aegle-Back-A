@@ -44,7 +44,19 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       },
-      estado: {
+      datosActuacion: {
+        type: Sequelize.STRING
+      },
+      datosPersonales: {
+        type: Sequelize.STRING
+      },
+      valoracion: {
+        type: Sequelize.STRING
+      },
+      diagTrat: {
+        type: Sequelize.STRING
+      },
+      manejoResolucion: {
         type: Sequelize.STRING
       },
       createdAt: {

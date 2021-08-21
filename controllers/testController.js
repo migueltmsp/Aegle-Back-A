@@ -24,7 +24,7 @@ class Retrieve{
 
     
 
-    async patchCase(id, estado){
+    async patchCase(id){
         
         return await Case.findOne({
             where: {id: id}

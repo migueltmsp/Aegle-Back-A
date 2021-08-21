@@ -38,6 +38,7 @@ router.post('/id', async (req, res)=> {
         answer[0].dataValues.estado = JSON.parse(answer[0].dataValues.estado)
 
         res.json(answer[0].dataValues)
+        res.sendStatus(200)
     } catch (err) {
         return res.status(500).json({
             mensaje: err.message
@@ -75,7 +76,7 @@ router.patch('/patchCase', async (req, res)=> {
 router.patch('/testReceive', async (req, res)=> {             
     try {
 
-        let estado = req.body.estado;
+        let estado = req.body;
         let id = 1
         console.log(estado)
 
@@ -83,12 +84,13 @@ router.patch('/testReceive', async (req, res)=> {
         /* console.log(caso.dataValues) */
 
         caso.estado = JSON.stringify(estado);
+        console.log(caso.estado)
         
         await caso.save();
 
-        res.json(await testController.patchCase(id, doctorId));
+        res.json(await testController.patchCase(id));
        
-        res.sendStatus(200)
+       
     } catch (err) {
         return res.status(500).json({
             mensaje: err.message
