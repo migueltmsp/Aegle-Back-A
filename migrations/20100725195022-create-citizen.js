@@ -17,6 +17,21 @@ module.exports = {
       genero: {
         type: Sequelize.STRING
       },
+      tarjetaSIP: {
+        type: Sequelize.STRING
+      },
+      DNI: {
+        type: Sequelize.STRING
+      },
+      domicilio: {
+        type: Sequelize.STRING
+      },
+      telefonoPersonal: {
+        type: Sequelize.INTEGER
+      },
+      telefonoContactar: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

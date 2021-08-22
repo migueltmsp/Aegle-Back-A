@@ -46,6 +46,26 @@ router.post('/id', async (req, res)=> {
     }
 });
 
+router.post('/autocomplete', async (req, res)=> {             
+    try {
+        let dni = req.body.dni;
+
+     /*    console.log("Id es",req.body.id)
+        console.log("Edad es",req.body.edad) */
+
+        let answer = await testController.autocomplete(dni);
+       /*  console.log("DATAVALUES ES", answer[0].dataValues) */
+
+        /* answer[0].dataValues.edad = JSON.parse(answer[0].dataValues.edad) */
+        console.log("AHORAAAAAAAAAAAAAAAAAAAAAAAAAAA",answer[0].dataValues.edad)
+        res.json(answer[0].dataValues)
+    } catch (err) {
+        return res.status(500).json({
+            mensaje: err.message
+        });
+    }
+});
+
 router.patch('/patchCase', async (req, res)=> {             
     try {
         let id = req.body.id;
@@ -76,15 +96,21 @@ router.patch('/patchCase', async (req, res)=> {
 router.patch('/testReceive', async (req, res)=> {             
     try {
 
-        let estado = req.body;
+        let informacion = req.body;
         let id = 1
-        console.log(estado)
+        console.log(informacion)
 
-        const caso = (await testController.patchCase(id, estado))
-        /* console.log(caso.dataValues) */
+        const caso = (await testController.patchCase(id))
+        console.log(caso.dataValues)
 
-        caso.estado = JSON.stringify(estado);
-        console.log(caso.estado)
+        caso.datosActuacion = JSON.stringify(informacion.datosActuacion);
+        caso.datosPersonales = JSON.stringify(informacion.datosPersonales);
+        caso.valoracion = JSON.stringify(informacion.valoracion);
+        caso.diagTrat = JSON.stringify(informacion.diagTrat);
+        caso.manejoResolucion = JSON.stringify(informacion.manejoResolucion);
+
+
+        console.log(caso.dataValues)
         
         await caso.save();
 

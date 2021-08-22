@@ -1,5 +1,5 @@
 const router = require("express").Router()
-const { Doctor, Case } = require('../models');
+const { Doctor, Case, Citizen } = require('../models');
 
 class Retrieve{
 
@@ -13,6 +13,12 @@ class Retrieve{
     async testCase1(){
         return Doctor.findAll({
             where: {id: 1}
+        });
+    }
+
+    async autocomplete(dni){
+        return Citizen.findAll({
+            where: {DNI: dni}
         });
     }
 
