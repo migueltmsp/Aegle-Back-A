@@ -29,10 +29,10 @@ class DoctorData {
         
     }
 
-    async completeLogin(secretUser, superToken){
-        return Doctor.findAll({
+    async completeLogin(superToken){
+        
+        return Doctor.findOne({
             where: {
-                secretUser: secretUser,
                 superToken: superToken
             }
         }

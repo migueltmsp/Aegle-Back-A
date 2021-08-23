@@ -110,7 +110,7 @@ router.patch('/testReceive', async (req, res)=> {
         caso.manejoResolucion = JSON.stringify(informacion.manejoResolucion);
 
 
-        console.log(caso.dataValues)
+        /* console.log(caso.dataValues) */
         
         await caso.save();
 

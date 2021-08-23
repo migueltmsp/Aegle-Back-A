@@ -26,7 +26,7 @@ router.post('/sendPassCode', async (req, res)=> {
        
         let answer = (await loginController.passCode(email,productoEscalar))
 
-        res.status(200).json(answer[0].secretUser);
+        res.json(answer[0].secretUser);
     } catch (err) {
         return res.status(500).json({
             mensaje: err.message
@@ -36,14 +36,14 @@ router.post('/sendPassCode', async (req, res)=> {
 
 router.post('/completeLogin', async (req, res)=> {             
     try {
-        let secretUser = req.body.secretUser;
+        /* let secretUser = req.body.secretUser; */
         let superToken = req.body.superToken;
        
-        let answer = (await loginController.completeLogin(secretUser, superToken))
+        let answer = (await loginController.completeLogin(superToken))
 
 
         
-        res.status(200).json(answer[0]);
+        res.status(200).json(answer);
     } catch (err) {
         return res.status(500).json({
             mensaje: err.message
