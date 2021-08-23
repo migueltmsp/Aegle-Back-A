@@ -41,9 +41,10 @@ router.post('/completeLogin', async (req, res)=> {
        
         let answer = (await loginController.completeLogin(superToken))
 
+        console.log(answer.dataValues)
 
         
-        res.status(200).json(answer);
+        res.json(answer.dataValues);
     } catch (err) {
         return res.status(500).json({
             mensaje: err.message
