@@ -68,7 +68,7 @@ router.patch('/patchCase', async (req, res)=> {
         const caso = (await testController.patchCase(id, doctorId))
 
         caso.doctorId = doctorId;
-        caso.estado = estado;
+        caso.estado = estado; 
         await caso.save();
 
         res.json(await testController.patchCase(id, doctorId));
