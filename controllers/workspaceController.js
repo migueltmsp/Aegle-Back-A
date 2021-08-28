@@ -3,11 +3,9 @@ const { Doctor, Case, Citizen } = require('../models');
 
 class Retrieve{
 
-    async testCase(){
+    async allCases(){
         return Case.findAll();
     }
-
- 
     
 
     async testCase1(){
@@ -43,5 +41,5 @@ class Retrieve{
 
 }
 
-let testController = new Retrieve();
-module.exports = testController;
+let workspaceController = new Retrieve();
+module.exports = workspaceController;

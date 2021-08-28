@@ -1,12 +1,12 @@
 const router = require("express").Router();
-const testController = require("../controllers/testController.js");
+const workspaceController = require("../controllers/workspaceController.js");
 
 
 
 //GET - ID ORDER - NO ADMIN
 router.get('/', async (req, res) => {
     try {
-        res.json(await testController.testCase());
+        res.json(await workspaceController.allCases());
 
    }catch (err) {
        return res.status(500).json({
@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 
 router.get('/n1', async (req, res) => {
     try {
-        res.json(await testController.testCase1());
+        res.json(await workspaceController.testCase1());
 
    }catch (err) {
        return res.status(500).json({
@@ -32,7 +32,7 @@ router.post('/id', async (req, res)=> {
     try {
         let id = req.body.id;
 
-        let answer = await testController.testId(id);
+        let answer = await workspaceController.testId(id);
         console.log(answer[0].dataValues)
         answer[0].dataValues.estado = JSON.parse(answer[0].dataValues.estado)
 
@@ -49,7 +49,7 @@ router.post('/autocomplete', async (req, res)=> {
     try {
         let dni = req.body.dni;
 
-        let answer = await testController.autocomplete(dni);
+        let answer = await workspaceController.autocomplete(dni);
 
         res.json(answer[0].dataValues)
     } catch (err) {
@@ -65,13 +65,13 @@ router.patch('/patchCase', async (req, res)=> {
         let doctorId = req.body.doctorId;
         let estado = req.body.estado;
 
-        const caso = (await testController.patchCase(id, doctorId))
+        const caso = (await workspaceController.patchCase(id, doctorId))
 
         caso.doctorId = doctorId;
         caso.estado = estado; 
         await caso.save();
 
-        res.json(await testController.patchCase(id, doctorId));
+        res.json(await workspaceController.patchCase(id, doctorId));
        
     
     } catch (err) {
@@ -88,7 +88,7 @@ router.patch('/testReceive', async (req, res)=> {
         let informacion = req.body;
         let id = 1
 
-        const caso = (await testController.patchCase(id))
+        const caso = (await workspaceController.patchCase(id))
 
         caso.datosActuacion = JSON.stringify(informacion.datosActuacion);
         caso.datosPersonales = JSON.stringify(informacion.datosPersonales);
@@ -99,7 +99,7 @@ router.patch('/testReceive', async (req, res)=> {
         
         await caso.save();
 
-        res.json(await testController.patchCase(id));
+        res.json(await workspaceController.patchCase(id));
        
        
     } catch (err) {
