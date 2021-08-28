@@ -3,7 +3,7 @@ const workspaceController = require("../controllers/workspaceController.js");
 
 
 
-router.get('/cases/', async (req, res) => {
+router.get('/admin/cases/', async (req, res) => {
     try {
         res.json(await workspaceController.allCases());
 
@@ -15,16 +15,24 @@ router.get('/cases/', async (req, res) => {
 });
 
 
-router.post('/id', async (req, res)=> {             
+router.post('/history', async (req, res)=> {             
     try {
 
         let id = req.body.id;
+
         let answer = await workspaceController.testId(id);
+        /* console.log(answer[0].dataValues) */
+
+        const structuredAnswer = answer.map((element,index) =>{
+            return element[index] = answer[index].dataValues;
+           /*  console.log("elemento",element[index]) */
+        });
+
+        console.log("out",structuredAnswer)
 
         answer[0].dataValues.estado = JSON.parse(answer[0].dataValues.estado)
 
         res.json(answer[0].dataValues)
-        res.sendStatus(200)
     } catch (err) {
         return res.status(500).json({
             mensaje: err.message
