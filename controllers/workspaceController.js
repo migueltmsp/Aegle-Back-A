@@ -7,13 +7,6 @@ class Retrieve{
         return Case.findAll();
     }
     
-
-    async testCase1(){
-        return Doctor.findAll({
-            where: {id: 1}
-        });
-    }
-
     async autocomplete(dni){
         return Citizen.findAll({
             where: {DNI: dni}

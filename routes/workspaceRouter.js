@@ -3,8 +3,7 @@ const workspaceController = require("../controllers/workspaceController.js");
 
 
 
-//GET - ID ORDER - NO ADMIN
-router.get('/', async (req, res) => {
+router.get('/cases/', async (req, res) => {
     try {
         res.json(await workspaceController.allCases());
 
@@ -16,24 +15,12 @@ router.get('/', async (req, res) => {
 });
 
 
-
-router.get('/n1', async (req, res) => {
-    try {
-        res.json(await workspaceController.testCase1());
-
-   }catch (err) {
-       return res.status(500).json({
-           message: err.message
-       });
-   }
-});
-
 router.post('/id', async (req, res)=> {             
     try {
-        let id = req.body.id;
 
+        let id = req.body.id;
         let answer = await workspaceController.testId(id);
-        console.log(answer[0].dataValues)
+
         answer[0].dataValues.estado = JSON.parse(answer[0].dataValues.estado)
 
         res.json(answer[0].dataValues)
