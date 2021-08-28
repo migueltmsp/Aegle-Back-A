@@ -28,11 +28,11 @@ router.post('/history', async (req, res)=> {
            /*  console.log("elemento",element[index]) */
         });
 
-        console.log("out",structuredAnswer)
+      /*   console.log("out",structuredAnswer)
 
-        answer[0].dataValues.estado = JSON.parse(answer[0].dataValues.estado)
+        answer[0].dataValues.estado = JSON.parse(answer[0].dataValues.estado) */
 
-        res.json(answer[0].dataValues)
+        res.json(structuredAnswer)
     } catch (err) {
         return res.status(500).json({
             mensaje: err.message
