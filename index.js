@@ -18,6 +18,7 @@ app.use(router);
 //Connecting to the database
 db.then(()=>{
     //Starting server
+    
         app.listen(port, ()=> console.log(`Server (Node) running on http://localhost:${port}`));
     })
     .catch((err)=> console.log(err.message));

@@ -21,18 +21,15 @@ router.post('/history', async (req, res)=> {
         let id = req.body.id;
 
         let answer = await workspaceController.testId(id);
-        /* console.log(answer[0].dataValues) */
 
         const structuredAnswer = answer.map((element,index) =>{
-            return element[index] = answer[index].dataValues;
-           /*  console.log("elemento",element[index]) */
+
+            return(element[index] = (answer[index].dataValues)) 
+            
         });
 
-      /*   console.log("out",structuredAnswer)
-
-        answer[0].dataValues.estado = JSON.parse(answer[0].dataValues.estado) */
-
         res.json(structuredAnswer)
+        
     } catch (err) {
         return res.status(500).json({
             mensaje: err.message
@@ -42,6 +39,7 @@ router.post('/history', async (req, res)=> {
 
 router.post('/autocomplete', async (req, res)=> {             
     try {
+        
         let dni = req.body.dni;
 
         let answer = await workspaceController.autocomplete(dni);
