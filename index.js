@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 80;
+const port = 6000;
 const router = require('./router');
 const db = require('./db.js');
 const cors = require('cors');
@@ -19,6 +19,6 @@ app.use(router);
 db.then(()=>{
     //Starting server
     
-        app.listen(port, ()=> console.log(`Server (Node) running on http://localhost:${port}`));
+        app.listen(process.env.PORT || port, ()=> console.log(`Server (Node) running on http://localhost:${port}`));
     })
     .catch((err)=> console.log(err.message));
