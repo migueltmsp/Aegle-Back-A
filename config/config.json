@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "1234",
-    "database": "aegle_db",
-    "host": "127.0.0.1",
+    "username": "b74a082e5427d5",
+    "password": "b1a857ec",
+    "database": "heroku_12eb866ac0ab297",
+    "host": "us-cdbr-east-04.cleardb.com",
     "dialect": "mysql"
   },
   "test": {
