@@ -70,9 +70,16 @@ router.patch('/patchCase', async (req, res)=> {
     try {
 
         let informacion = req.body;
+        console.log("Info", informacion)
         let id = req.body.id;
 
         const caso = (await workspaceController.patchCase(id))
+        console.log(caso)
+
+        caso.citizenId = JSON.stringify(informacion.citizenId);
+        caso.doctorId = JSON.stringify(informacion.doctorId);
+        caso.hospitalId = JSON.stringify(informacion.hospitalId);
+        caso.AssistantId = JSON.stringify(informacion.assistantId);
 
         caso.datosActuacion = JSON.stringify(informacion.datosActuacion);
         caso.datosPersonales = JSON.stringify(informacion.datosPersonales);
