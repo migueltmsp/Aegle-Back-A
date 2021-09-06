@@ -52,20 +52,11 @@ router.post('/autocomplete', async (req, res)=> {
     }
 });
 
-router.patch('/patchCase', async (req, res)=> {             
+router.post('/createCase', async (req, res)=> {             
     try {
-        let id = req.body.id;
-        let doctorId = req.body.doctorId;
-        let estado = req.body.estado;
-
-        const caso = (await workspaceController.patchCase(id, doctorId))
-
-        caso.doctorId = doctorId;
-        caso.estado = estado; 
-        await caso.save();
-
-        res.json(await workspaceController.patchCase(id, doctorId));
        
+        res.json((await workspaceController.createCase()));
+   
     
     } catch (err) {
         return res.status(500).json({
@@ -75,7 +66,7 @@ router.patch('/patchCase', async (req, res)=> {
 });
 
 
-router.patch('/receivePatch', async (req, res)=> {             
+router.patch('/patchCase', async (req, res)=> {             
     try {
 
         let informacion = req.body;

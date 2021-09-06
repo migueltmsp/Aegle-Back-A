@@ -13,22 +13,22 @@ class Retrieve{
         });
     }
 
-    async testId(id){
-        return Case.findAll({
-            where: {doctorId: id}
-        });
-    }
 
-    
+    async createCase(){
+        let newcase = await Case.create();
+        return newcase
+      
+    }
 
     async patchCase(id){
         
         return await Case.findOne({
             where: {id: id}
         });
-
-        
+      
     }
+
+
 
 
 
