@@ -20,7 +20,7 @@ router.post('/history', async (req, res)=> {
 
         let id = req.body.id;
 
-        let answer = await workspaceController.testId(id);
+        let answer = await workspaceController.historyById(id);
 
         const structuredAnswer = answer.map((element,index) =>{
 

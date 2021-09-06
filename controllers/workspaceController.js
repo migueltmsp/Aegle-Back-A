@@ -13,22 +13,28 @@ class Retrieve{
         });
     }
 
-
-    async createCase(){
-        let newcase = await Case.create();
-        return newcase
-      
+    async historyById(id){
+        return Case.findAll({
+            where: {doctorId: id}
+        });
     }
+
+    
 
     async patchCase(id){
         
         return await Case.findOne({
             where: {id: id}
         });
-      
+
+        
     }
 
-
+    async createCase(){
+        let newcase = await Case.create();
+        return newcase
+      
+    }
 
 
 
