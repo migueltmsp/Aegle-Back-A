@@ -79,7 +79,7 @@ router.patch('/patchCase', async (req, res)=> {
         caso.citizenId = JSON.stringify(informacion.citizenId);
         caso.doctorId = JSON.stringify(informacion.doctorId);
         caso.hospitalId = JSON.stringify(informacion.hospitalId);
-        caso.AssistantId = JSON.stringify(informacion.assistantId);
+        caso.assistantId = JSON.stringify(informacion.assistantId);
 
         caso.datosActuacion = JSON.stringify(informacion.datosActuacion);
         caso.datosPersonales = JSON.stringify(informacion.datosPersonales);
