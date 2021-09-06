@@ -75,11 +75,11 @@ router.patch('/patchCase', async (req, res)=> {
 });
 
 
-router.patch('/testReceive', async (req, res)=> {             
+router.patch('/receivePatch', async (req, res)=> {             
     try {
 
         let informacion = req.body;
-        let id = 1
+        let id = req.body.id;
 
         const caso = (await workspaceController.patchCase(id))
 
