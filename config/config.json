@@ -7,16 +7,16 @@
     "dialect": "mysql"
   },
   "test": {
-    "username": "b5de7890d8139c",
-    "password": "c4e1ee18",
-    "database": "heroku_ccc4deeb3132e827",
+    "username": "b5f7a6f57066bc",
+    "password": "f57a62a1",
+    "database": "heroku_b168741ca9cc5d0",
     "host": "eu-cdbr-west-01.cleardb.com",
     "dialect": "mysql"
   },
   "production": {
-    "username": "b5de7890d8139c",
-    "password": "c4e1ee18",
-    "database": "heroku_ccc4deeb3132e827",
+    "username": "b5f7a6f57066bc",
+    "password": "f57a62a1",
+    "database": "heroku_b168741ca9cc5d0",
     "host": "eu-cdbr-west-01.cleardb.com",
     "dialect": "mysql"
   }
